@@ -1,0 +1,6 @@
+/* Background pattern from Toptal Subtle Patterns */
+
+body {
+  background-image: url("../img/tilebg.png");
+  background-repeat: repeat;
+}
