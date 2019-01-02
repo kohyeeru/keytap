@@ -16,12 +16,52 @@
   </head>
 
   <body>
-    <input type="checkbox" id="customization-panel-toggle" />
+    <input type="checkbox" id="customization-panel-toggle" checked />
     <label for="customization-panel-toggle" class="material-icons"><span class="icon">keyboard_arrow_up</span></label>
 
+    <!-- Customization Panel -->
     <div id="customization-panel">
+      <!-- Sound Library -->
       <div id="sound-library"></div>
-      <div id="customization-settings"></div>
+      <!-- /#Sound Library -->
+
+      <!-- Customization Settings -->
+      <div id="customization-settings">
+        <div id="selected-key-indication">h</div>
+        <input type="text" placeholder="track_name.mp3" />
+
+        <h5>SOUND</h5>
+        <hr />
+
+        <label for="launch-mode-selection">Launch Mode</label>
+        <select id="launch-mode">
+          <option value="press" selected>Press to play</option>
+          <option value="hold">Hold to play</option>
+          <option value="toggle">Press to toggle</option>
+        </select>
+
+        <input type="checkbox" id="loop-toggle" />
+        <label for="loop-toggle">Loop</label>
+
+        <h5>VISUAL</h5>
+        <hr />
+
+        <label for="track-color">Track Color</label>
+        <div class="color-input">
+          <span>#</span>
+          <input type="text" id="track-color" />
+        </div>
+        <button type="button" class="color-preview"></button>
+
+        <label for="light-color">Light Color</label>
+        <div class="color-input">
+          <span>#</span>
+          <input type="text" id="light-color" />
+        </div>
+        <button type="button" class="color-preview"></button>
+      </div>
+      <!-- /#Customization Settings -->
     </div>
+    <!-- /#Customization Panel -->
   </body>
 </html>
