@@ -30,10 +30,21 @@ body {
   right: 0;
   bottom: 0;
 
-  width: 70px;
-  border-radius: 5px 5px 0 0;
+  padding: 0 20px;
+  border-radius: 3px 3px 0 0;
+
+  color: #dddddd;
 
   transition: .5s transform;
+}
+
+/* switch arrow icon direction */
+#customization-panel-toggle:checked ~ label::before {
+  content: "keyboard_arrow_down";
+}
+
+#customization-panel-toggle:checked ~ label .icon {
+  display: none;
 }
 
 #customization-panel {
