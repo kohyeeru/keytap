@@ -4,6 +4,8 @@ body {
   background-image: url("../img/tilebg.png");
   background-repeat: repeat;
 
+  font-family: "Roboto", sans-serif;
+
   margin: 0;
 }
 
