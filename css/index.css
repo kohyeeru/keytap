@@ -20,7 +20,7 @@ body {
 
 #customization-panel-toggle:checked + label,
 #customization-panel-toggle:checked ~ #customization-panel {
-  transform: translateY(-280px);
+  transform: translateY(-30vh);
 }
 
 #customization-panel-toggle + label {
@@ -51,9 +51,9 @@ body {
   background-color: #2f2f2f;
 
   position: fixed;
-  bottom: -280px;
+  bottom: -30vh;
 
-  height: 280px;
+  height: 30vh;
   width: 100%;
 
   transition: .5s transform;
