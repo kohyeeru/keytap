@@ -28,7 +28,7 @@ body {
 
   position: fixed;
   right: 0;
-  bottom: 0;
+  bottom: -1px;
 
   padding: 0 20px;
   border-radius: 3px 3px 0 0;
@@ -48,8 +48,6 @@ body {
 }
 
 #customization-panel {
-  background-color: #2f2f2f;
-
   position: fixed;
   bottom: -30vh;
 
@@ -57,4 +55,28 @@ body {
   width: 100%;
 
   transition: .5s transform;
+
+  display: flex;
+  flex-direction: row;
+}
+
+/* Sound Library */
+
+#sound-library {
+  background-color: #2f2f2f;
+  
+  width: 20vw;
+  min-width: 200px;
+
+  margin-right: 3px;
+  
+  flex: none;
+}
+
+/* Customization Settings */
+
+#customization-settings {
+  background-color: #2f2f2f;
+
+  flex: auto;
 }
