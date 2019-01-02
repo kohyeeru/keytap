@@ -3,4 +3,47 @@
 body {
   background-image: url("../img/tilebg.png");
   background-repeat: repeat;
+
+  margin: 0;
+}
+
+/*******************/
+/* SLIDE-OUT PANEL */
+/*******************/
+
+/* hides checkbox  */
+#customization-panel-toggle {
+  position: absolute;
+  opacity: 0;
+  display: none;
+}
+
+#customization-panel-toggle:checked + label,
+#customization-panel-toggle:checked ~ #customization-panel {
+  transform: translateY(-280px);
+}
+
+#customization-panel-toggle + label {
+  background-color: #2f2f2f;
+
+  position: fixed;
+  right: 0;
+  bottom: 0;
+
+  width: 70px;
+  border-radius: 5px 5px 0 0;
+
+  transition: .5s transform;
+}
+
+#customization-panel {
+  background-color: #2f2f2f;
+
+  position: fixed;
+  bottom: -280px;
+
+  height: 280px;
+  width: 100%;
+
+  transition: .5s transform;
 }
