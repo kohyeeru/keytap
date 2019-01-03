@@ -27,38 +27,51 @@
 
       <!-- Customization Settings -->
       <div id="customization-settings">
+
         <div id="selected-key-indication">h</div>
-        <input type="text" placeholder="track_name.mp3" />
+        <input type="text" id="track-name-input" />
 
-        <h5>SOUND</h5>
+        <div class="heading">SOUND</div>
         <hr />
 
-        <label for="launch-mode-selection">Launch Mode</label>
-        <select id="launch-mode">
-          <option value="press" selected>Press to play</option>
-          <option value="hold">Hold to play</option>
-          <option value="toggle">Press to toggle</option>
-        </select>
+        <div id="launch-setting" class="setting-item">
+          <label for="launch-mode-selection">Launch Mode</label>
+          <select id="launch-mode">
+            <option value="press" selected>Press to play</option>
+            <option value="hold">Hold to play</option>
+            <option value="toggle">Press to toggle</option>
+          </select>
+        </div>
 
-        <input type="checkbox" id="loop-toggle" />
-        <label for="loop-toggle">Loop</label>
+        <div id="loop-setting" class="setting-item">
+          <label for="loop-toggle" class="test">
+            <input type="checkbox" id="loop-toggle"/>
+            <div class="checkbox"><div class="checkmark"></div></div>
+            Loop
+          </label>
+        </div>
 
-        <h5>VISUAL</h5>
+        <div class="heading">VISUAL</div>
         <hr />
 
-        <label for="track-color">Track Color</label>
-        <div class="color-input">
-          <span>#</span>
-          <input type="text" id="track-color" />
+        <div id="track-color-setting" class="setting-item">
+          <label for="track-color">Track Color</label>
+          <div class="color-input">
+            <span>#</span>
+            <input type="text" id="track-color" maxlength="6" />
+          </div>
+          <button type="button" class="color-preview"></button>
         </div>
-        <button type="button" class="color-preview"></button>
 
-        <label for="light-color">Light Color</label>
-        <div class="color-input">
-          <span>#</span>
-          <input type="text" id="light-color" />
+        <div id="light-color-setting" class="setting-item">
+          <label for="light-color">Light Color</label>
+          <div class="color-input">
+            <span>#</span>
+            <input type="text" id="light-color" maxlength="6" />
+          </div>
+          <button type="button" class="color-preview"></button>
         </div>
-        <button type="button" class="color-preview"></button>
+
       </div>
       <!-- /#Customization Settings -->
     </div>

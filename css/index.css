@@ -5,8 +5,18 @@ body {
   background-repeat: repeat;
 
   font-family: "Roboto", sans-serif;
+  font-size: 0.8em;
 
   margin: 0;
+}
+
+button, input, select, textarea {
+  font-family: "Roboto", sans-serif;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #dd960e;
 }
 
 /*******************/
@@ -79,6 +89,158 @@ body {
 
 #customization-settings {
   background-color: #2f2f2f;
+  color: #dddddd;
+
+  padding: 15px;
 
   flex: auto;
 }
+
+.heading {
+  position: relative;
+  bottom: -8px;
+
+  margin-top: 10px;
+
+  color: #dd960e;
+  font-size: 0.9em;
+  font-weight: lighter;
+  letter-spacing: 0.2em;
+}
+
+.setting-item {
+  margin: 10px 0;
+  display: block;
+}
+
+/* Selected Key & Track Name */
+
+#selected-key-indication {
+  background-color: #222222;
+  
+  color: #dddddd;
+  font-weight: bold;
+  font-size: 1.2em;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 25px;
+
+  width: 25px;
+  height: 25px;
+
+  display: inline-block;
+}
+
+#track-name-input {
+  background-color: #444444;
+
+  color: #dddddd;
+
+  height: 25px;
+  padding: 0 8px;
+
+  border: none;
+}
+
+#track-name-input:focus {
+  outline: solid 1px #dd960e !important;
+}
+
+/* Dropdown */
+
+#launch-setting label {
+  margin-right: 5px;
+}
+#launch-mode {
+  background-color: #444444;
+  color: #dddddd;
+
+  padding: 2px 3px;
+  border: none;
+}
+
+#launch-mode:focus {
+  outline: solid 1px #dd960e !important;
+}
+
+/* Checkbox */
+
+/* hide browser's default checkbox */
+input[type=checkbox] {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 0;
+  height: 0;
+
+  visibility: hidden;
+}
+
+/* style custom checkbox */
+.checkbox {
+  background-color: #444444;
+
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+  border-radius: 2px;
+
+  display: inline-block;
+}
+
+#loop-setting input[type=checkbox]:checked ~ .checkbox {
+  background-color: #dd960e;
+}
+
+/* style custom checkmark */
+.checkmark {
+  visibility: hidden;
+
+  position: absolute;
+  margin-left: 3px;
+
+  width: 3px;
+  height: 6px;
+  border: solid #222222;
+  border-width: 0 2px 2px 0;
+
+  display: inline-block;
+
+  transform: rotate(45deg);
+}
+
+#loop-setting input[type=checkbox]:checked ~ .checkbox .checkmark {
+  visibility: visible;
+}
+
+/* Color Code Input */
+
+#track-color-setting label {
+  margin-right: 5px;
+}
+
+#light-color-setting label {
+  margin-right: 8px;
+}
+
+.color-input {
+  background-color: #444444;
+
+  padding: 2px 5px;
+  display: inline-block;
+}
+
+.color-input input[type="text"] {
+  background: transparent;
+  color: #dddddd;
+
+  margin-left: -2px;
+
+  border: none;
+  outline: none;
+}
+
+/* Color Preview */
+
+
