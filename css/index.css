@@ -30,6 +30,7 @@ hr {
   display: none;
 }
 
+/* reveal panel on toggle */
 #customization-panel-toggle:checked + label,
 #customization-panel-toggle:checked ~ #customization-panel {
   transform: translateY(-30vh);
@@ -46,6 +47,8 @@ hr {
   border-radius: 3px 3px 0 0;
 
   color: #dddddd;
+
+  cursor: pointer;
 
   transition: .5s transform;
 }
@@ -151,6 +154,11 @@ hr {
 #launch-setting label {
   margin-right: 5px;
 }
+
+#launch-setting select {
+  cursor: pointer;
+}
+
 #launch-mode {
   background-color: #444444;
   color: #dddddd;
@@ -165,8 +173,12 @@ hr {
 
 /* Checkbox */
 
-/* hide browser's default checkbox */
-input[type=checkbox] {
+#loop-setting label {
+  cursor: pointer;
+}
+
+/* hides checkbox */
+#loop-setting label input[type=checkbox] {
   position: absolute;
   top: 0;
   left: 0;
@@ -194,6 +206,7 @@ input[type=checkbox] {
 }
 
 /* style custom checkmark */
+
 .checkmark {
   visibility: hidden;
 
@@ -243,4 +256,17 @@ input[type=checkbox] {
 
 /* Color Preview */
 
+.color-preview {
+  background-color: #dd960e;
 
+  position: relative;
+  bottom: -3px;
+
+  width: 22px;
+  height: 22px;
+  
+  border: 2px solid #444444;
+  outline: none;
+
+  cursor: pointer;
+}
