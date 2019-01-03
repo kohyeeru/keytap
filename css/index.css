@@ -112,7 +112,10 @@ hr {
 }
 
 .setting-item {
+  position: relative;
+
   margin: 8px 0;
+
   display: block;
 }
 
@@ -271,4 +274,34 @@ hr {
   outline: none;
 
   cursor: pointer;
+}
+
+.color-picker {
+  background-color: #222222;
+
+  position: absolute;
+  bottom: 2px;
+
+  width: 80px;
+  height: 50px;
+  
+  display: inline-block;
+
+  border-radius: 3px;
+}
+
+/* bubble triangle */
+.color-picker:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+
+  width: 0;
+  height: 0;
+  margin-left: -6px;
+
+  border: 8px solid transparent;
+  border-right-color: #222222;
+  border-left: 0;
 }
