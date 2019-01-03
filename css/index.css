@@ -108,6 +108,7 @@ hr {
 #search-icon {
   position: relative;
   top: 2px;
+  margin-right: 5px;
 }
 
 #search-bar {
@@ -121,18 +122,28 @@ hr {
   display: inline-block;
 
   flex-grow: 1;
+  display: flex;
 }
 
 #search-bar input[type="text"] {
   background: transparent;
   color: #dddddd;
 
-  position: relative;
-  top: -2px;
-  left: 2px;
-
+  width: 100%;
+  
   border: none;
   outline: none;
+
+  flex-grow: 1;
+  flex-shrink: 3;
+}
+
+#clear-icon {
+  margin-left: 3px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Directory Buttons */
