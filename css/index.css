@@ -99,6 +99,10 @@ hr {
   flex: none;
 }
 
+#library-menu {
+  display: flex;
+}
+
 /* Search Bar */
 
 #search-icon {
@@ -115,6 +119,8 @@ hr {
 
   padding: 2px 5px;
   display: inline-block;
+
+  flex-grow: 1;
 }
 
 #search-bar input[type="text"] {
@@ -135,10 +141,11 @@ hr {
   background: transparent;
   color: #dd960e;
 
-  width: 25px;
-  height: 25px;
+  min-width: 25px;
+  min-height: 25px;
   padding: 0;
-  
+  margin-left: 5px;
+
   border: 1px solid #dd960e;
   border-radius: 2px;
 }
