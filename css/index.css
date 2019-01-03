@@ -264,11 +264,9 @@ hr {
 .color-preview {
   background-color: #dd960e;
 
-  position: relative;
-  bottom: -3px;
-
   width: 22px;
   height: 22px;
+  vertical-align: top;
   
   border: 2px solid #444444;
   outline: none;
