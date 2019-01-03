@@ -33,7 +33,7 @@ hr {
 /* reveal panel on toggle */
 #customization-panel-toggle:checked + label,
 #customization-panel-toggle:checked ~ #customization-panel {
-  transform: translateY(-30vh);
+  transform: translateY(-246px); /* customization panel's height */
 }
 
 #customization-panel-toggle + label {
@@ -64,9 +64,9 @@ hr {
 
 #customization-panel {
   position: fixed;
-  bottom: -30vh;
+  bottom: -246px;
 
-  height: 30vh;
+  height: 246px;
   width: 100%;
 
   transition: .5s transform;
