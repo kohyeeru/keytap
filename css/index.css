@@ -109,6 +109,8 @@ hr {
   position: relative;
   top: 2px;
   margin-right: 5px;
+
+  cursor: default;
 }
 
 #search-bar {
@@ -130,7 +132,7 @@ hr {
   color: #dddddd;
 
   width: 100%;
-  
+
   border: none;
   outline: none;
 
@@ -144,6 +146,8 @@ hr {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  cursor: pointer;
 }
 
 /* Directory Buttons */
@@ -159,6 +163,9 @@ hr {
 
   border: 1px solid #dd960e;
   border-radius: 2px;
+  outline: none;
+
+  cursor: pointer;
 }
 
 /**************************/
