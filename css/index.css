@@ -19,6 +19,14 @@ hr {
   border-top: 1px solid #dd960e;
 }
 
+.icon-xs {
+  font-size: 1em;
+}
+
+.icon-s {
+  font-size: 1.35em;
+}
+
 /*******************/
 /* SLIDE-OUT PANEL */
 /*******************/
@@ -58,7 +66,7 @@ hr {
   content: "keyboard_arrow_down";
 }
 
-#customization-panel-toggle:checked ~ label .icon {
+#customization-panel-toggle:checked ~ label span {
   display: none;
 }
 
@@ -75,7 +83,9 @@ hr {
   flex-direction: row;
 }
 
+/*****************/
 /* Sound Library */
+/*****************/
 
 #sound-library {
   background-color: #2f2f2f;
@@ -83,12 +93,44 @@ hr {
   width: 20vw;
   min-width: 200px;
 
+  padding: 15px;
   margin-right: 3px;
   
   flex: none;
 }
 
+/* Search Bar */
+
+#search-icon {
+  position: relative;
+  top: 2px;
+}
+
+#search-bar {
+  background-color: #444444;
+  color: #dddddd;
+
+  max-height: 25px;
+
+  padding: 2px 5px;
+  display: inline-block;
+}
+
+#search-bar input[type="text"] {
+  background: transparent;
+  color: #dddddd;
+
+  position: relative;
+  top: -2px;
+  left: 2px;
+
+  border: none;
+  outline: none;
+}
+
+/**************************/
 /* Customization Settings */
+/**************************/
 
 #customization-settings {
   background-color: #2f2f2f;
@@ -128,7 +170,7 @@ hr {
   font-weight: bold;
   font-size: 1.2em;
   text-align: center;
-  vertical-align: middle;
+  vertical-align: top;
   line-height: 25px;
 
   width: 25px;
@@ -210,7 +252,6 @@ hr {
 }
 
 /* style custom checkmark */
-
 .checkmark {
   visibility: hidden;
 
