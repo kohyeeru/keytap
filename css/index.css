@@ -111,6 +111,7 @@ hr {
   color: #dddddd;
 
   max-height: 25px;
+  vertical-align: top;
 
   padding: 2px 5px;
   display: inline-block;
@@ -126,6 +127,20 @@ hr {
 
   border: none;
   outline: none;
+}
+
+/* Directory Buttons */
+
+.orange-btn {
+  background: transparent;
+  color: #dd960e;
+
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  
+  border: 1px solid #dd960e;
+  border-radius: 2px;
 }
 
 /**************************/
