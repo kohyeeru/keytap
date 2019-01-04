@@ -27,6 +27,46 @@ hr {
   font-size: 1.35em;
 }
 
+/****************/
+/* Custom Icons */
+/****************/
+
+@font-face {
+  font-family: 'customicons';
+  src:  url('../fonts/customicons.eot?dmkm5q');
+  src:  url('../fonts/customicons.eot?dmkm5q#iefix') format('embedded-opentype'),
+    url('../fonts/customicons.ttf?dmkm5q') format('truetype'),
+    url('../fonts/customicons.woff?dmkm5q') format('woff'),
+    url('../fonts/customicons.svg?dmkm5q#customicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.custom-icons {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'customicons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.play_arrow_outline:before {
+  content: "\e900";
+}
+.upload_file:before {
+  content: "\e901";
+}
+.create_new_file:before {
+  content: "\e902";
+}
+
 /*******************/
 /* SLIDE-OUT PANEL */
 /*******************/
