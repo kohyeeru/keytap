@@ -168,6 +168,26 @@ hr {
   cursor: pointer;
 }
 
+/* Directory Listing */
+
+#root-directory {
+  padding-left: 0;
+}
+
+.directory-listing {
+  color: #dddddd;
+  list-style-type: none;
+}
+
+.directory-listing > li .icon-s {
+  color: #dd960e;
+  vertical-align: middle;
+}
+
+.directory-listing > li {
+  margin: 3px 0;
+}
+
 /**************************/
 /* Customization Settings */
 /**************************/
