@@ -211,7 +211,12 @@ hr {
 /* Directory Listing */
 
 #root-directory {
+  height: 180px;
+
   padding-left: 0;
+
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .directory-listing {
@@ -226,6 +231,15 @@ hr {
 
 .directory-listing > li {
   margin: 3px 0;
+}
+
+/* style scrollbar */
+#root-directory::-webkit-scrollbar {
+    width: 0.8em;
+}
+ 
+#root-directory::-webkit-scrollbar-thumb {
+  background-color: #444444;
 }
 
 /**************************/
