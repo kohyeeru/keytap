@@ -67,6 +67,52 @@ hr {
   content: "\e902";
 }
 
+/************/
+/* KEYBOARD */
+/************/
+
+#keyboard {
+  display: grid;
+  padding: 0 10%;
+  height: 100%;
+}
+
+.key-row {
+  display: flex;
+}
+
+.key {
+  background: rgba(255, 255, 255, 0.1);
+  margin: 5px;
+  width: 100%;
+}
+
+.key-lettering {
+  color: #dddddd;
+
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.controls {
+  color: #dddddd;
+
+  margin: 3px 0;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.volume-control {
+  background: #8b8b8b;
+
+  width: 8px;
+  height: 20px;
+  margin: 0 6px; /* width + side margins = height */
+  
+  display: inline-block;
+}
+
 /*******************/
 /* SLIDE-OUT PANEL */
 /*******************/
