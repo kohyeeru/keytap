@@ -72,9 +72,10 @@ hr {
 /************/
 
 #keyboard {
-  display: grid;
-  padding: 0 10%;
   height: 100%;
+  padding: 0 10%;
+
+  display: grid;
 }
 
 .key-row {
@@ -83,12 +84,18 @@ hr {
 
 .key {
   background: rgba(255, 255, 255, 0.1);
-  margin: 5px;
+
   width: 100%;
+  padding: 5px;
+  margin: 5px;
+
+  text-align: right;
 }
 
 .key-lettering {
   color: #dddddd;
+
+  margin-right: 8px;
 
   font-size: 1.2em;
   font-weight: bold;
@@ -96,8 +103,6 @@ hr {
 
 .controls {
   color: #dddddd;
-
-  margin: 3px 0;
 
   display: flex;
   justify-content: space-around;
