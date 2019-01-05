@@ -101,6 +101,8 @@ hr {
   font-weight: bold;
 }
 
+/* Key Controls (play, loop, volume) */
+
 .controls {
   color: #dddddd;
 
@@ -116,6 +118,24 @@ hr {
   margin: 0 6px; /* width + side margins = height */
   
   display: inline-block;
+}
+
+/* Drag & Drop Track */
+
+.track-bar {
+  background: #dd960e;
+  text-align: left;
+
+  padding: 6px;
+
+  border-radius: 3px;
+
+  display: flex;
+  cursor: pointer;
+}
+
+.track-name {
+  flex-grow: 1;
 }
 
 /*******************/
