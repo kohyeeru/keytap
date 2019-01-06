@@ -1,6 +1,6 @@
-const key = (key) => {
+const key = (letter) => {
   return {
-    _key: key,
+    _letter: letter,
     _playback: false,
     _audio: '',
 
@@ -47,4 +47,19 @@ const track = (name) => {
       this._key = key;
     }
   }
+}
+
+/**
+* Convert numbers in base-10 to base-36 to generate alphabets.
+* Return an array of alphabets a-z.
+*/
+const generateAlphabets = () => {
+  const alphabets = [];
+  
+  for (let i = 10; i < 36; i++) {
+    let letter = i.toString(36);
+    alphabets.push(letter);
+  }
+
+  return alphabets;
 }
