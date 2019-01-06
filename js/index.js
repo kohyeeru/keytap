@@ -63,3 +63,18 @@ const generateAlphabets = () => {
 
   return alphabets;
 }
+
+/**
+* Return an array of key objects from a-z.
+*/
+const generateKeyboard = () => {
+  const keyboard = [];
+  const alphabets = generateAlphabets();
+
+  alphabets.forEach((letter) => {
+    const keyObj = key(letter);
+    keyboard.push(keyObj);
+  });
+
+  return keyboard;
+}
