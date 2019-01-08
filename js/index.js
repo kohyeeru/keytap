@@ -45,11 +45,17 @@ const track = (name) => {
     _loop: false,
     _key: '',
 
-    rename (name) {
+    get name () {
+      return this._name;
+    },
+    set name (name) {
       this._name = name;
     },
 
-    adjustVolume (amount) {
+    get volume () {
+      return this._volume;
+    },
+    set volume (amount) {
       this._volume = amount;
     },
 
