@@ -97,6 +97,8 @@ hr {
 .key {
   background: rgba(255, 255, 255, 0.1);
 
+  position: relative;
+
   width: 100%;
   padding: 5px;
   margin: 5px;
@@ -118,8 +120,16 @@ hr {
 .controls {
   color: #dddddd;
 
+  position: absolute;
+  bottom: 10px;
+  width: 90%;
+
   display: flex;
   justify-content: space-around;
+}
+
+.controls i, .controls div {
+  cursor: pointer;
 }
 
 .volume-control {
