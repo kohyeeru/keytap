@@ -4,6 +4,10 @@ const key = (letter) => {
     _playback: false,
     _audio: '',
 
+    get letter() {
+      return this._letter;
+    },
+
     play () {
       this._playback = true;
       // TODO
@@ -77,4 +81,30 @@ const generateKeyboard = () => {
   });
 
   return keyboard;
+}
+
+/**
+* 
+*
+* @param keyboard   An array of key objects.
+*/
+const displayKeyboard = (keyboard) => {
+  keyboard.forEach((key) => {
+    let div = document.createElement('div');
+    div.className = 'key';
+    div.innerHTML =
+    `<span class="key-lettering">${key.letter}</span>
+    <div class="controls">
+      <i class="material-icons icon-s">play_arrow</i>
+      <i class="material-icons icon-s">loop</i>
+      <div class="volume-control"></div>
+    </div>`;
+
+    document.getElementById("row-1").appendChild(div);
+  });
+}
+
+window.onload = function() {
+  const keyboard = generateKeyboard();
+  displayKeyboard(keyboard);
 }
