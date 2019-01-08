@@ -72,14 +72,26 @@ hr {
 /************/
 
 #keyboard {
-  height: 100%;
-  padding: 0 10%;
+  height: 50vh; /* (100vh - height) / 2 = top/bottom margins */
+  margin: 25vh 5%;
 
   display: grid;
+
+  /* TODO use javascript to transform when customization panel
+     is up then delete this line */
+  transform: translateY(-15vh);
 }
 
 .key-row {
   display: flex;
+}
+
+#home-row {
+  padding: 0 5%;
+}
+
+#bottom-row {
+  padding: 0 20% 0 10%;
 }
 
 .key {
@@ -583,3 +595,14 @@ hr {
 .light-purple { background-color: #ab7ebb; }
 .purple { background-color: #924aab; }
 .dark-purple { background-color: #5d2f6c; }
+
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+
+@media (max-width: 1230px) {
+  #keyboard {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
