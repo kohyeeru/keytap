@@ -67,6 +67,99 @@ hr {
   content: "\e902";
 }
 
+/************/
+/* KEYBOARD */
+/************/
+
+#keyboard {
+  height: 50vh; /* (100vh - height) / 2 = top/bottom margins */
+  margin: 25vh 5%;
+
+  display: grid;
+
+  /* TODO use javascript to transform when customization panel
+     is up then delete this line */
+  transform: translateY(-15vh);
+}
+
+.key-row {
+  display: flex;
+}
+
+#home-row {
+  padding: 0 5%;
+}
+
+#bottom-row {
+  padding: 0 20% 0 10%;
+}
+
+.key {
+  background: rgba(255, 255, 255, 0.1);
+
+  position: relative;
+
+  width: 100%;
+  padding: 5px;
+  margin: 5px;
+
+  text-align: right;
+}
+
+.key-lettering {
+  color: #dddddd;
+
+  margin-right: 8px;
+
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* Key Controls (play, loop, volume) */
+
+.controls {
+  color: #dddddd;
+
+  position: absolute;
+  bottom: 10px;
+  width: 90%;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+.controls i, .controls div {
+  cursor: pointer;
+}
+
+.volume-control {
+  background: #8b8b8b;
+
+  width: 8px;
+  height: 20px;
+  margin: 0 6px; /* width + side margins = height */
+  
+  display: inline-block;
+}
+
+/* Drag & Drop Track */
+
+.track-bar {
+  background: #dd960e;
+  text-align: left;
+
+  padding: 6px;
+
+  border-radius: 3px;
+
+  display: flex;
+  cursor: pointer;
+}
+
+.track-name {
+  flex-grow: 1;
+}
+
 /*******************/
 /* SLIDE-OUT PANEL */
 /*******************/
@@ -512,3 +605,14 @@ hr {
 .light-purple { background-color: #ab7ebb; }
 .purple { background-color: #924aab; }
 .dark-purple { background-color: #5d2f6c; }
+
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+
+@media (max-width: 1230px) {
+  #keyboard {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
