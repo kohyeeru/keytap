@@ -6,7 +6,12 @@ const BOTTOM_ROW = 'bottom-row';
 const START = 0;
 const END = 1;
 
+const FOLDER = 0;
+const FILE = 1;
+
 /* OBJECTS */
+
+// Keyboard
 
 const key = (letter) => {
   return {
@@ -36,7 +41,7 @@ const key = (letter) => {
       this._audio = '';
     }
   }
-}
+};
 
 const track = (name) => {
   return {
@@ -67,9 +72,83 @@ const track = (name) => {
       this._key = key;
     }
   }
-}
+};
+
+// Sound Library
+
+const library = [
+  { type: 'FOLDER', name: 'Drums'},
+  { type: 'FILE', name: 'Clap funk.wav' },
+  { type: 'FILE', name: 'Clap.wav' },
+  { type: 'FILE', name: 'HH Big.wav' },
+  { type: 'FILE', name: 'HH small.wav' },
+  { type: 'FILE', name: 'HH.wav' },
+  { type: 'FILE', name: 'Impact kick.wav' },
+  { type: 'FILE', name: 'Kick drum 1.wav' },
+  { type: 'FILE', name: 'Kick drum 2.wav' },
+  { type: 'FILE', name: 'Kick drum 80s mastered 2.wav' },
+  { type: 'FILE', name: 'Kick drum 80s mastered 3.wav' },
+  { type: 'FILE', name: 'Kick drum 80s mastered.wav' },
+  { type: 'FILE', name: 'Loop funk.wav' },
+  { type: 'FILE', name: 'Snare 2.wav' },
+  { type: 'FILE', name: 'Snare 3.wav' },
+  { type: 'FILE', name: 'Snare flat 80s 2.wav' },
+  { type: 'FILE', name: 'Snare flat 80s.wav' },
+  { type: 'FILE', name: 'Snare.wav' },
+  { type: 'FILE', name: 'Tom.wav' },
+];
+
+const file = (name) => {
+  return {
+    _name: name,
+    _extension: '',
+    _playback: false,
+
+    get name () {
+      return this._name;
+    },
+    set name (name) {
+      this._name = name;
+    },
+
+    play () {
+      this._playback = true;
+      // TODO
+    },
+
+    stop () {
+      this._playback = false;
+      //TODO
+    }
+  }
+};
+
+const folder = () => {
+  return {
+    _name: 'new folder',
+    _files: [],
+    _isOpen: false,
+
+    get name () {
+      return this._name;
+    },
+    set name (name) {
+      this._name = name;
+    },
+
+    addNewFile (file) {
+      this._files.push(file);
+    }
+
+    removeFile (file) {
+      // TODO
+    }
+  }
+};
 
 /* FUNCTIONS DECLARATION */
+
+// Keyboard
 
 /**
 * Convert numbers in base-10 to base-36 to generate alphabets.
@@ -84,7 +163,7 @@ const generateAlphabets = () => {
   }
 
   return alphabets;
-}
+};
 
 /**
 * Return an array of key objects from a-z.
@@ -99,7 +178,7 @@ const generateKeyboard = () => {
   });
 
   return keyboard;
-}
+};
 
 /**
 * Return a range array of [start, end] indicating the indices of keys
@@ -125,7 +204,7 @@ const getKeyRange = (rowType) => {
   }
 
   return range;
-}
+};
 
 /**
 * Format markup for a single key.
@@ -146,7 +225,7 @@ const renderKey = (key) => {
   </div>`;
 
   return div;
-}
+};
 
 /**
 * Render a row of keys.
@@ -162,7 +241,7 @@ const displayKeyRow = (keyboard, rowType) => {
     const div = renderKey(key);
     document.getElementById(rowType).appendChild(div);
   }
-}
+};
 
 /**
 * Render the on-screen keyboard.
@@ -173,11 +252,11 @@ const displayKeyboard = (keyboard) => {
   displayKeyRow(keyboard, TOP_ROW);
   displayKeyRow(keyboard, HOME_ROW);
   displayKeyRow(keyboard, BOTTOM_ROW);
-}
+};
 
 /* MAIN */
 
 window.onload = function() {
   const keyboard = generateKeyboard();
   displayKeyboard(keyboard);
-}
+};
