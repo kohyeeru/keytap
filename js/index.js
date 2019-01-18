@@ -76,28 +76,6 @@ const track = (name) => {
 
 // Sound Library
 
-const library = [
-  { type: 'FOLDER', name: 'Drums'},
-  { type: 'FILE', name: 'Clap funk.wav' },
-  { type: 'FILE', name: 'Clap.wav' },
-  { type: 'FILE', name: 'HH Big.wav' },
-  { type: 'FILE', name: 'HH small.wav' },
-  { type: 'FILE', name: 'HH.wav' },
-  { type: 'FILE', name: 'Impact kick.wav' },
-  { type: 'FILE', name: 'Kick drum 1.wav' },
-  { type: 'FILE', name: 'Kick drum 2.wav' },
-  { type: 'FILE', name: 'Kick drum 80s mastered 2.wav' },
-  { type: 'FILE', name: 'Kick drum 80s mastered 3.wav' },
-  { type: 'FILE', name: 'Kick drum 80s mastered.wav' },
-  { type: 'FILE', name: 'Loop funk.wav' },
-  { type: 'FILE', name: 'Snare 2.wav' },
-  { type: 'FILE', name: 'Snare 3.wav' },
-  { type: 'FILE', name: 'Snare flat 80s 2.wav' },
-  { type: 'FILE', name: 'Snare flat 80s.wav' },
-  { type: 'FILE', name: 'Snare.wav' },
-  { type: 'FILE', name: 'Tom.wav' },
-];
-
 const file = (name) => {
   return {
     _name: name,
@@ -138,7 +116,7 @@ const folder = () => {
 
     addNewFile (file) {
       this._files.push(file);
-    }
+    },
 
     removeFile (file) {
       // TODO
@@ -254,9 +232,76 @@ const displayKeyboard = (keyboard) => {
   displayKeyRow(keyboard, BOTTOM_ROW);
 };
 
+// Library Directory Listing
+
+/**
+* Return an array of file names.
+*/
+const retrieveListings = () => {
+  const library =[ 'Clap funk.wav', 'Clap.wav', 'HH Big.wav', 'HH small.wav',
+  'HH.wav', 'Impact kick.wav', 'Kick drum 1.wav', 'Kick drum 2.wav',
+  'Kick drum 80s mastered 2.wav', 'Kick drum 80s mastered 3.wav',
+  'Kick drum 80s mastered.wav', 'Loop funk.wav', 'Snare 2.wav',
+  'Snare 3.wav', 'Snare flat 80s 2.wav', 'Snare flat 80s.wav', 'Snare.wav',
+  'Tom.wav' ];
+
+  return library;
+};
+
+/**
+* Convert a list of string names into file objects.
+* Return an array of file objects.
+*
+* @param listings   An array of string.
+*/
+const generateLibrary = (listings) => {
+  const library = [];
+
+  listings.forEach((entry) => {
+    const fileObj = file(entry);
+    library.push(fileObj);
+  });
+
+  return library;
+};
+
+/**
+* Format markup for a single listing.
+* Return a li element of this markup.
+*
+* @param file   A file object.
+*/
+const renderListing = (file) => {
+  let li = document.createElement('li');
+
+  li.className = 'interactable';
+  // TODO display play/stop icon based on file's playback status
+  li.innerHTML =
+  `<i class="custom-icons play_arrow_outline icon-s"></i>
+  <span>${file.name}</span>`;
+
+  return li;
+};
+
+/**
+* Render the directory listing in sound library.
+*
+* @param library   An array of file objects.
+*/
+const displayListing = (library) => {
+  library.forEach((file) => {
+    const li = renderListing(file);
+    document.getElementById('root-directory').appendChild(li);
+  });
+};
+
 /* MAIN */
 
 window.onload = function() {
   const keyboard = generateKeyboard();
   displayKeyboard(keyboard);
+
+  const listings = retrieveListings();
+  const library = generateLibrary(listings);
+  displayListing(library);
 };

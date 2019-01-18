@@ -27,6 +27,11 @@ hr {
   font-size: 1.35em;
 }
 
+/* TODO extract all cursor pointer properties in other styles to use this class */
+.interactable {
+  cursor: pointer;
+}
+
 /****************/
 /* Custom Icons */
 /****************/
