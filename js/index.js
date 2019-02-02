@@ -6,9 +6,6 @@ const BOTTOM_ROW = 'bottom-row';
 const START = 0;
 const END = 1;
 
-const FOLDER = 0;
-const FILE = 1;
-
 /* OBJECTS */
 
 // Keyboard
@@ -76,51 +73,43 @@ const track = (name) => {
 
 // Sound Library
 
-const file = (name) => {
+const file = (id, name) => {
   return {
+    _id: id,
     _name: name,
-    _extension: '',
+    _sound: new Howl({
+      src: ['./audio/' + name],
+      volume: 1.0,
+      onend: function () {
+        this._playback = false;
+      }
+    }),
     _playback: false,
+
+    get id () {
+      return this._id;
+    },
 
     get name () {
       return this._name;
     },
     set name (name) {
       this._name = name;
+    },
+
+    get playback() {
+      return this._playback;
     },
 
     play () {
       this._playback = true;
-      // TODO
+      this._sound.play();
     },
 
     stop () {
       this._playback = false;
-      //TODO
-    }
-  }
-};
-
-const folder = () => {
-  return {
-    _name: 'new folder',
-    _files: [],
-    _isOpen: false,
-
-    get name () {
-      return this._name;
+      this._sound.stop();
     },
-    set name (name) {
-      this._name = name;
-    },
-
-    addNewFile (file) {
-      this._files.push(file);
-    },
-
-    removeFile (file) {
-      // TODO
-    }
   }
 };
 
@@ -235,6 +224,20 @@ const displayKeyboard = (keyboard) => {
 // Library Directory Listing
 
 /**
+* Play a sound. Stops if is already playing.
+*
+* @param file   A file object.
+*/
+const previewSound = (element, file) => {
+  if (file.playback == true) {
+    file.stop();
+  }
+  else {
+    file.play();
+  }
+};
+
+/**
 * Return an array of file names.
 */
 const retrieveListings = () => {
@@ -257,10 +260,11 @@ const retrieveListings = () => {
 const generateLibrary = (listings) => {
   const library = [];
 
-  listings.forEach((entry) => {
-    const fileObj = file(entry);
+  for (let i = 0; i < listings.length; i++) {
+    let fileName = listings[i];
+    const fileObj = file(i, fileName);
     library.push(fileObj);
-  });
+  }
 
   return library;
 };
@@ -274,11 +278,15 @@ const generateLibrary = (listings) => {
 const renderListing = (file) => {
   let li = document.createElement('li');
 
+  li.id = 'audio-' + file.id;
   li.className = 'interactable';
-  // TODO display play/stop icon based on file's playback status
   li.innerHTML =
   `<i class="custom-icons play_arrow_outline icon-s"></i>
   <span>${file.name}</span>`;
+
+  li.onclick = function (e) {
+    previewSound(e, file);
+  }
 
   return li;
 };
