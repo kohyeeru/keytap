@@ -238,7 +238,9 @@ const previewSound = (element, file) => {
 };
 
 /**
+* Toggle playback icon between play and stop.
 *
+* @param file   A file object.
 */
 const togglePlaybackIcon = (element, file) => {
   const id = file.id;
