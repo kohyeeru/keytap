@@ -38,11 +38,11 @@ hr {
 
 @font-face {
   font-family: 'customicons';
-  src:  url('../fonts/customicons.eot?dmkm5q');
-  src:  url('../fonts/customicons.eot?dmkm5q#iefix') format('embedded-opentype'),
-    url('../fonts/customicons.ttf?dmkm5q') format('truetype'),
-    url('../fonts/customicons.woff?dmkm5q') format('woff'),
-    url('../fonts/customicons.svg?dmkm5q#customicons') format('svg');
+  src:  url('../fonts/customicons.eot?qx4hoa');
+  src:  url('../fonts/customicons.eot?qx4hoa#iefix') format('embedded-opentype'),
+    url('../fonts/customicons.ttf?qx4hoa') format('truetype'),
+    url('../fonts/customicons.woff?qx4hoa') format('woff'),
+    url('../fonts/customicons.svg?qx4hoa#customicons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -64,6 +64,9 @@ hr {
 
 .play_arrow_outline:before {
   content: "\e900";
+}
+.stop:before {
+  content: "\e903";
 }
 .upload_file:before {
   content: "\e901";

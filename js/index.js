@@ -238,6 +238,22 @@ const previewSound = (element, file) => {
 };
 
 /**
+*
+*/
+const togglePlaybackIcon = (element, file) => {
+  const id = file.id;
+  const li = document.getElementById('audio-' + id);
+  const icon = li.firstChild;
+
+  if (file.playback === false) {
+    icon.className = 'custom-icons play_arrow_outline icon-s';
+  }
+  else {
+    icon.className = 'custom-icons stop icon-s';
+  }
+}
+
+/**
 * Return an array of file names.
 */
 const retrieveListings = () => {
@@ -286,6 +302,7 @@ const renderListing = (file) => {
 
   li.onclick = function (e) {
     previewSound(e, file);
+    togglePlaybackIcon(e, file);
   }
 
   return li;
